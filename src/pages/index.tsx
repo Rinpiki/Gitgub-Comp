@@ -13,6 +13,7 @@ export default function Home() {
       <S.ContainerHome>
         <S.Header>
           <h1>Github Comp</h1>
+          <p>ooooo</p>
         </S.Header>
       </S.ContainerHome>
     </>
