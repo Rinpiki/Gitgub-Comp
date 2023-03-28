@@ -13,3 +13,12 @@ export const Header = styled.div`
   align-items: flex-start;
   font-size: 14px;
 `
+export const Image = styled.img`
+  width: 100%;
+  height: auto;
+`
+export const ContainerImage = styled.div`
+  max-width: 200px;
+  max-height: 100px;
+  border: 2px red solid;
+`
