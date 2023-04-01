@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 export const ContainerHome = styled.div`
   display: flex;
-  width: 100vw;
+  width: 90vw;
   max-width: 1300px;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 `
 export const Header = styled.div`
   width: 100%;
@@ -14,7 +15,7 @@ export const Header = styled.div`
   font-size: 14px;
 `
 export const Image = styled.img`
-  width: 100%;
+  width: 300px;
   height: auto;
 `
 export const ContainerImage = styled.div`

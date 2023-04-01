@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import * as S from '../styles/home'
+import Header from 'src/componets/Header'
 
 type Props = {
   img: string
@@ -15,13 +16,8 @@ export default function Home(props: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <S.ContainerHome>
-        <S.Header>
-          <h1>Github Comp</h1>
-          <p>ooooo</p>
-        </S.Header>
-        <S.ContainerImage>
-          <S.Image src={props.img} alt="imagem de fora" />
-        </S.ContainerImage>
+        <Header />
+        <S.Image src={props.img} alt="imagem de fora" width={196} height={294} />
       </S.ContainerHome>
     </>
   )
