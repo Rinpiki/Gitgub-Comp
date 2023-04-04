@@ -12,8 +12,20 @@ export const Header = styled.div`
   width: 100%;
   padding: 25px 0px;
   align-items: flex-start;
-  font-size: 14px;
+  h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  a {
+    margin-right: 10px;
+    font-size: 16px;
+    background: #dff2ef;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
 `
+
 export const Image = styled.img`
   width: 300px;
   height: auto;

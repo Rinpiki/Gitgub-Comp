@@ -13,8 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #0b1121;
-  color: aliceblue;
+  background: #fffeff;
+  color: #2c404d;
 }
 
 a {

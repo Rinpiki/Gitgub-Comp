@@ -1,16 +1,41 @@
 import React from 'react'
 import Header from 'src/componets/Header'
-import * as S from '../styles/home'
+import { Chart } from 'react-google-charts'
+import * as S from '../styles/home.styles'
 
 type Props = {
   img: string
 }
 
+const options = {
+  title: 'clima data',
+  subtitle: 'temperatura, humidade',
+  backgroundColor: '#FFFEFF', // Define a cor de fundo
+  color: '#2C404D',
+  colors: ['#F74143', '#5D5DB5', '#F5A35E'],
+}
+
+export const data = [
+  ['Year', 'Sales', 'Expenses', 'Profit'],
+  ['2014', 1000, 400, 200],
+  ['2015', 1170, 460, 250],
+  ['2016', 660, 1120, 300],
+  ['2017', 1030, 540, 350],
+]
+
 function page2(props: Props) {
   return (
     <S.ContainerHome>
       <Header />
-      <S.Image src={props.img} alt="imagem de fora" width={196} height={294} />
+
+      <Chart
+        chartType="ColumnChart"
+        data={data}
+        width="100%"
+        height="400px"
+        options={options}
+        legendToggle
+      />
     </S.ContainerHome>
   )
 }

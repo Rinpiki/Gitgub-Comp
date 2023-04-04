@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import * as S from '../styles/home'
+import * as S from '../styles/home.styles'
 import Header from 'src/componets/Header'
 
 type Props = {
