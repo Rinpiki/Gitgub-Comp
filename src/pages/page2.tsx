@@ -3,10 +3,6 @@ import Header from 'src/componets/Header'
 import { Chart } from 'react-google-charts'
 import * as S from '../styles/home.styles'
 
-type Props = {
-  img: string
-}
-
 const options = {
   title: 'clima data',
   subtitle: 'temperatura, humidade',
@@ -23,7 +19,7 @@ export const data = [
   ['2017', 1030, 540, 350],
 ]
 
-function page2(props: Props) {
+function page2() {
   return (
     <S.ContainerHome>
       <Header />
@@ -32,7 +28,7 @@ function page2(props: Props) {
         chartType="ColumnChart"
         data={data}
         width="100%"
-        height="400px"
+        height="500px"
         options={options}
         legendToggle
       />
@@ -42,13 +38,4 @@ function page2(props: Props) {
 
 export default page2
 
-export async function getStaticProps() {
-  const img =
-    'https://images.unsplash.com/photo-1553531889-e6cf4d692b1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
-
-  return {
-    props: {
-      img,
-    },
-  }
-}
+//api https://api.openweathermap.org/data/2.5/weather?q=curitiba&appid=1128cc452a9e81897f43e79194e695b5&units=metric&lang=pt_br

@@ -1,12 +1,33 @@
 import Head from 'next/head'
 import * as S from '../styles/home.styles'
 import Header from 'src/componets/Header'
+import SpLocation from 'src/componets/SpLocation'
 
 type Props = {
-  img: string
+  datajson: {
+    coord: {
+      lat: number
+      lon: number
+    }
+  }
 }
 
-export default function Home(props: Props) {
+function hoe() {
+  if (typeof navigator !== 'undefined' && typeof navigator.geolocation !== 'undefined') {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const latitude = position.coords.latitude
+      const longitude = position.coords.longitude
+      // Use a latitude e longitude para exibir a localização do usuário
+      console.log(latitude, longitude)
+    })
+  } else {
+    // Navegador não suporta a API de Geolocalização
+  }
+}
+
+hoe()
+
+export default function Home({ datajson }: Props) {
   return (
     <>
       <Head>
@@ -17,19 +38,21 @@ export default function Home(props: Props) {
       </Head>
       <S.ContainerHome>
         <Header />
-        <S.Image src={props.img} alt="imagem de fora" width={196} height={294} />
+        <SpLocation />
       </S.ContainerHome>
     </>
   )
 }
 
 export async function getStaticProps() {
-  const img =
-    'https://images.unsplash.com/photo-1647891938250-954addeb9c51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80'
-
+  const data = await fetch(
+    'https://api.openweathermap.org/data/2.5/weather?q=curitiba&appid=1128cc452a9e81897f43e79194e695b5&units=metric&lang=pt_br',
+  )
+  const datajson = await data.json()
+  console.log(datajson)
   return {
     props: {
-      img,
+      datajson: datajson,
     },
   }
 }

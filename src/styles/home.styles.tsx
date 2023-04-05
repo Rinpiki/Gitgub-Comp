@@ -14,7 +14,7 @@ export const Header = styled.div`
   align-items: flex-start;
   h1 {
     font-size: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   a {
     margin-right: 10px;
